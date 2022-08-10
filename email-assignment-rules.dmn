@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D3887DD7-0DE8-4926-9425-13E4D3024A4F" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_BEA423AE-DF44-4555-AD18-8E9A2533C198" name="email-assignment-rules" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D3887DD7-0DE8-4926-9425-13E4D3024A4F">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_4E33C67C-47C1-4EC6-A4E8-155AD1C6B6A6" name="First Name">
+    <dmn:extensionElements/>
+    <dmn:variable id="_63839FD2-8F7E-4903-AA47-71E331FF0C1A" name="First Name" typeRef="string"/>
+  </dmn:inputData>
+  <dmn:inputData id="_7CBEDB19-A333-441D-AFA7-7A3535545B42" name="Last Name">
+    <dmn:extensionElements/>
+    <dmn:variable id="_349BFA93-CC8A-45DE-B085-D334131106E1" name="Last Name" typeRef="string"/>
+  </dmn:inputData>
+  <dmn:decision id="_97BF4AFC-6769-4796-BFB2-958AAD8E58E4" name="Email">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D665106C-EC65-4735-8B78-02F8787E21E1" name="Email" typeRef="string"/>
+    <dmn:informationRequirement id="_6F31BE4E-1C92-45AD-8E3A-0016FD257C1F">
+      <dmn:requiredInput href="#_4E33C67C-47C1-4EC6-A4E8-155AD1C6B6A6"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_C96D5D5F-AE91-4F3B-843B-E671B8EE51EB">
+      <dmn:requiredInput href="#_7CBEDB19-A333-441D-AFA7-7A3535545B42"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression id="_11388D19-72BB-4CCC-AB91-76CDFAA12AEB">
+      <dmn:text>First Name+"."+Last Name+"@company.com"</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_44A50E30-B639-4F24-8C1D-E6230BE4081C" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_11388D19-72BB-4CCC-AB91-76CDFAA12AEB">
+            <kie:width>598</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_4E33C67C-47C1-4EC6-A4E8-155AD1C6B6A6" dmnElementRef="_4E33C67C-47C1-4EC6-A4E8-155AD1C6B6A6" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="430" y="412" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_7CBEDB19-A333-441D-AFA7-7A3535545B42" dmnElementRef="_7CBEDB19-A333-441D-AFA7-7A3535545B42" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="589" y="412" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_97BF4AFC-6769-4796-BFB2-958AAD8E58E4" dmnElementRef="_97BF4AFC-6769-4796-BFB2-958AAD8E58E4" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="507" y="224" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_6F31BE4E-1C92-45AD-8E3A-0016FD257C1F" dmnElementRef="_6F31BE4E-1C92-45AD-8E3A-0016FD257C1F">
+        <di:waypoint x="480" y="437"/>
+        <di:waypoint x="557" y="249"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_C96D5D5F-AE91-4F3B-843B-E671B8EE51EB" dmnElementRef="_C96D5D5F-AE91-4F3B-843B-E671B8EE51EB">
+        <di:waypoint x="639" y="437"/>
+        <di:waypoint x="557" y="249"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
